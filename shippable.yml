@@ -1,12 +1,12 @@
 language: python
-build_image: shippableimages/ubuntu1204_python
+build_image: shippableimages/ubuntu1204_python:0.0.3
 python:
   - 2.6
-  - 2.7
-  - 3.2
-  - 3.3
-  - 3.4
-  - pypy
+  #- 2.7
+  #- 3.2
+  #- 3.3
+  #- 3.4
+  #- pypy
   
 install:
   - pip install -r requirements.txt
@@ -17,6 +17,7 @@ before_script:
   - mkdir -p shippable/codecoverage
 
 script:
+  - git --version
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch test.py
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
