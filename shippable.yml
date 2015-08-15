@@ -2,9 +2,9 @@ language: python
 build_image: shippableimages/ubuntu1204_python
 python:
   - 2.6
-  - 2.7
-  - 3.2
-  - 3.3
+  #- 2.7
+  #- 3.2
+  #- 3.3
   #- 3.4
   #- pypy
   
@@ -20,6 +20,8 @@ script:
   - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
   - which python && coverage run --branch test.py
   - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
+
+cache: true
 
 notifications:
      email:
