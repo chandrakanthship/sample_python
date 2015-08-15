@@ -23,9 +23,3 @@ script:
 
 cache: true
 
-notifications:
-     email:
-         recipients:
-             - chandrakanth@shippable.com
-         on_success: always
-         on_failure: always
