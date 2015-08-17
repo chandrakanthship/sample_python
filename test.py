@@ -8,7 +8,6 @@ class TestSuite(unittest.TestCase):
         app.calculate()
         self.failIf(app.retrieve() != 62)
 
-
 def main():
     unittest.main()
 
